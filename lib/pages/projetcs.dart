@@ -238,7 +238,7 @@ class _ProjectsState extends State<Projects> {
                           color: Colors.white,
                           FontAwesomeIcons.github,
                         ),
-                        "url": "https://github.com/GusBTB",
+                        "url": "https://github.com/GusBTB/portfolio_flutter",
                         "text": "GitHub",
                       },
                     ],
