@@ -239,34 +239,35 @@ class _ContactCardsState extends State<ContactCards> {
                       ),
                     ),
                   ),
+                  Text(
+                    "Vamos conversar",
+                    style: GoogleFonts.karla(
+                      textStyle: const TextStyle(
+                        // height: 0.8,
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
                   MouseRegion(
+                    cursor: SystemMouseCursors.click,
                     child: GestureDetector(
                       onTap: () async {
                         await launchUrl(
                             Uri.parse('https://wa.me/5511972750808'));
                       },
                       child: Text(
-                        "Vamos conversar",
+                        "Mandar mensagem",
                         style: GoogleFonts.karla(
                           textStyle: const TextStyle(
                             // height: 0.8,
                             color: Colors.black,
                             fontSize: 15,
+                            decoration: TextDecoration.underline,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    "Mandar mensagem",
-                    style: GoogleFonts.karla(
-                      textStyle: const TextStyle(
-                        // height: 0.8,
-                        color: Colors.black,
-                        fontSize: 15,
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   )

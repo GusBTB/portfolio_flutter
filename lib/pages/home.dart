@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/header.dart';
+import 'package:portfolio/pages/about_me.dart';
 import 'package:portfolio/pages/contacts.dart';
 import 'package:portfolio/pages/landing.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
@@ -48,9 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       const Projects(),
                       const Contact(),
-                      Container(
-                        color: Colors.blue,
-                      ),
+                      const AboutMe()
                     ]),
               ),
             ],
