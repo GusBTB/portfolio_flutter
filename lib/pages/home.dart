@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return SafeArea(
       child: Scaffold(
-        body: Container(
+        body: SizedBox(
           width: size.width,
           height: size.height,
           child: Column(

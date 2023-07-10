@@ -14,34 +14,6 @@ class Projects extends StatefulWidget {
 }
 
 class _ProjectsState extends State<Projects> {
-  // late bool nwOpen;
-  // late bool gsOpen;
-  // late bool myoOpen;
-  // late bool portOpen;
-  @override
-  void initState() {
-    // nwOpen = context.watch<ProjectsProvider>().nwOpen;
-    // myoOpen = context.watch<ProjectsProvider>().myoOpen;
-    // portOpen = context.watch<ProjectsProvider>().portOpen;
-    // gsOpen = context.watch<ProjectsProvider>().gsOpen;
-    super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    // nwOpen = context.watch<ProjectsProvider>().nwOpen;
-    // myoOpen = context.watch<ProjectsProvider>().myoOpen;
-    // portOpen = context.watch<ProjectsProvider>().portOpen;
-    // gsOpen = context.watch<ProjectsProvider>().gsOpen;
-
-    // nwOpen = Provider.of<ProjectsProvider>(context).nwOpen;
-    // myoOpen = Provider.of<ProjectsProvider>(context).myoOpen;
-    // portOpen = Provider.of<ProjectsProvider>(context).portOpen;
-    // gsOpen = Provider.of<ProjectsProvider>(context).gsOpen;
-
-    super.didChangeDependencies();
-  }
-
   @override
   Widget build(BuildContext context) {
     final ProjectsProvider provider = ProjectsProvider();

@@ -4,6 +4,7 @@ import 'package:portfolio/providers/projects_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/utils.dart';
 import 'package:portfolio/components/slider.dart' as slider;
+import 'package:url_launcher/url_launcher.dart';
 
 class Project extends StatefulWidget {
   Project(
@@ -153,7 +154,9 @@ class _ProjectState extends State<Project> {
                                     ),
                                 // border radius
                                 borderRadius: BorderRadius.circular(7))),
-                        onPressed: () {},
+                        onPressed: () async {
+                          await launchUrl(Uri.parse(e.value["url"]));
+                        },
                         icon: e.value["icon"],
                         label: Text(
                           e.value["text"],
