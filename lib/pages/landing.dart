@@ -55,55 +55,36 @@ class _LandingPageState extends State<LandingPage>
     return Container(
       color: Colors.white,
       width: size.width,
-      child: Center(
-        child: Container(
-          width: ut.recoverSize(context),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      padding: EdgeInsets.only(
+          top: 15,
+          left: (size.width - ut.recoverSize(context)) / 2,
+          right: (size.width - ut.recoverSize(context)) / 2),
+      child: ListView(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
             children: [
-              Column(
+              Row(
                 children: [
-                  Row(
-                    children: [
-                      const Expanded(child: SizedBox()),
-                      Container(
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: AssetImage("assets/eufoto.jpg"))),
-                        height: 50,
-                        width: 50,
-                      ),
-                      const SizedBox(
-                        width: 6,
-                      ),
-                      // ),
-                      SizedBox(
-                        width: ut.recoverSize(context) - 65,
-                        child: FittedBox(
-                          fit: BoxFit.contain,
-                          child: Text(
-                            "FULL-STACK",
-                            style: GoogleFonts.koulen(
-                              textStyle: TextStyle(
-                                height: 0.8,
-                                color: Theme.of(context).colorScheme.primary,
-                                fontSize: 50,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Expanded(child: SizedBox()),
-                    ],
+                  const Expanded(child: SizedBox()),
+                  Container(
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage("assets/eufoto.jpg"))),
+                    height: 50,
+                    width: 50,
                   ),
+                  const SizedBox(
+                    width: 6,
+                  ),
+                  // ),
                   SizedBox(
-                    width: ut.recoverSize(context),
+                    width: ut.recoverSize(context) - 65,
                     child: FittedBox(
                       fit: BoxFit.contain,
                       child: Text(
-                        "DEVELOPER",
+                        "FULL-STACK",
                         style: GoogleFonts.koulen(
                           textStyle: TextStyle(
                             height: 0.8,
@@ -115,172 +96,185 @@ class _LandingPageState extends State<LandingPage>
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        widget.pageController
-                            .animateToPage(page: 1, duration: 400);
-                        widget.page = 1;
-                      });
-                    },
-                    style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: ut.paddingResponsive(context)),
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                                width: 2, // thickness
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .primary // color
-                                ),
-                            // border radius
-                            borderRadius: BorderRadius.circular(7))),
-                    child: Text(
-                      "Ver Projetos",
-                      style: GoogleFonts.karla(
-                        textStyle: TextStyle(
-                          // height: 0.8,
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                        ),
+                  const Expanded(child: SizedBox()),
+                ],
+              ),
+              SizedBox(
+                width: ut.recoverSize(context),
+                child: FittedBox(
+                  fit: BoxFit.contain,
+                  child: Text(
+                    "DEVELOPER",
+                    style: GoogleFonts.koulen(
+                      textStyle: TextStyle(
+                        height: 0.8,
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 50,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 50,
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.pageController.animateToPage(page: 1, duration: 400);
+                    widget.page = 1;
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: ut.paddingResponsive(context)),
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                            width: 2, // thickness
+                            color:
+                                Theme.of(context).colorScheme.primary // color
+                            ),
+                        // border radius
+                        borderRadius: BorderRadius.circular(7))),
+                child: Text(
+                  "Ver Projetos",
+                  style: GoogleFonts.karla(
+                    textStyle: TextStyle(
+                      // height: 0.8,
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        "CONTATOS",
-                        style: GoogleFonts.koulen(
-                          textStyle: const TextStyle(
-                            height: 0.8,
-                            color: Colors.black,
-                            fontSize: 25,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () async {
-                          await launchUrl(
-                              Uri.parse('https://github.com/GusBTB'));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                          height: 40,
-                          width: 40,
-                          child: const Center(
-                              child: FaIcon(
-                            color: Colors.white,
-                            FontAwesomeIcons.github,
-                          )),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          await launchUrl(Uri.parse(
-                              'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpgcmKnkwxGmMvqPvFQcCPFfpmmdZJmdRwPXXrqNSRpPhDMgzFKvggzsgnRZDfQQmzRfTk'));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                          height: 40,
-                          width: 40,
-                          child: const Center(
-                              child: FaIcon(
-                            color: Colors.white,
-                            FontAwesomeIcons.envelope,
-                          )),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          await launchUrl(Uri.parse(
-                              'https://www.linkedin.com/in/gustavo-gcs/'));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                          height: 40,
-                          width: 40,
-                          child: const Center(
-                              child: FaIcon(
-                            color: Colors.white,
-                            FontAwesomeIcons.linkedinIn,
-                          )),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () async {
-                          await launchUrl(
-                              Uri.parse('https://wa.me/5511972750808'));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                          height: 40,
-                          width: 40,
-                          child: const Center(
-                              child: FaIcon(
-                            size: 28,
-                            color: Colors.white,
-                            FontAwesomeIcons.whatsapp,
-                          )),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 35,
-                  ),
-                  Center(
-                    child: SizedBox(
-                      width: 260.0,
-                      child: DefaultTextStyle(
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 35,
-                          fontFamily: 'Cascadia Mono',
-                          fontWeight: FontWeight.w700,
-                        ),
-                        child: AnimatedTextKit(
-                          animatedTexts: [
-                            TypewriterAnimatedText('Hello World',
-                                cursor: "_",
-                                speed: Duration(milliseconds: 400)),
-                          ],
-                        ),
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "CONTATOS",
+                    style: GoogleFonts.koulen(
+                      textStyle: const TextStyle(
+                        height: 0.8,
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () async {
+                      await launchUrl(Uri.parse('https://github.com/GusBTB'));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      height: 40,
+                      width: 40,
+                      child: const Center(
+                          child: FaIcon(
+                        color: Colors.white,
+                        FontAwesomeIcons.github,
+                      )),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () async {
+                      await launchUrl(Uri.parse(
+                          'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpgcmKnkwxGmMvqPvFQcCPFfpmmdZJmdRwPXXrqNSRpPhDMgzFKvggzsgnRZDfQQmzRfTk'));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      height: 40,
+                      width: 40,
+                      child: const Center(
+                          child: FaIcon(
+                        color: Colors.white,
+                        FontAwesomeIcons.envelope,
+                      )),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () async {
+                      await launchUrl(Uri.parse(
+                          'https://www.linkedin.com/in/gustavo-gcs/'));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      height: 40,
+                      width: 40,
+                      child: const Center(
+                          child: FaIcon(
+                        color: Colors.white,
+                        FontAwesomeIcons.linkedinIn,
+                      )),
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () async {
+                      await launchUrl(Uri.parse('https://wa.me/5511972750808'));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                      height: 40,
+                      width: 40,
+                      child: const Center(
+                          child: FaIcon(
+                        size: 28,
+                        color: Colors.white,
+                        FontAwesomeIcons.whatsapp,
+                      )),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 35,
+              ),
+              Center(
+                child: SizedBox(
+                  width: 260.0,
+                  child: DefaultTextStyle(
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      fontFamily: 'Cascadia Mono',
+                      fontWeight: FontWeight.w700,
+                    ),
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        TypewriterAnimatedText('Hello World',
+                            cursor: "_", speed: Duration(milliseconds: 400)),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
-          ),
-        ),
+          )
+        ],
       ),
     );
   }

@@ -55,161 +55,163 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        bottomNavigationBar: Container(
-          height: 60,
-          decoration: BoxDecoration(
-            border:
-                Border(top: BorderSide(width: 2, color: Colors.grey.shade300)),
-            color: Colors.white,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    pageController.animateToPage(page: 0, duration: 400);
-                    page = 0;
-                  });
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    page == 0
-                        ? Icon(
-                            Icons.home_filled,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          )
-                        : const Icon(
-                            Icons.home_outlined,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      "Início",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: page == 0
-                              ? Theme.of(context).colorScheme.primary
-                              : Colors.black),
-                    )
-                  ],
+        bottomNavigationBar: size.width > 699
+            ? null
+            : Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border(
+                      top: BorderSide(width: 2, color: Colors.grey.shade300)),
+                  color: Colors.white,
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    pageController.animateToPage(page: 1, duration: 400);
-                    page = 1;
-                  });
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    page == 1
-                        ? Icon(
-                            Icons.psychology_alt_rounded,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          )
-                        : const Icon(
-                            Icons.psychology_alt,
-                            color: Colors.black,
-                            size: 20,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          pageController.animateToPage(page: 0, duration: 400);
+                          page = 0;
+                        });
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          page == 0
+                              ? Icon(
+                                  Icons.home_filled,
+                                  color: Theme.of(context).colorScheme.primary,
+                                  size: 20,
+                                )
+                              : const Icon(
+                                  Icons.home_outlined,
+                                  color: Colors.black,
+                                  size: 20,
+                                ),
+                          const SizedBox(
+                            height: 5,
                           ),
-                    const SizedBox(
-                      height: 5,
+                          Text(
+                            "Início",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: page == 0
+                                    ? Theme.of(context).colorScheme.primary
+                                    : Colors.black),
+                          )
+                        ],
+                      ),
                     ),
-                    Text(
-                      "Projetos",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: page == 1
-                              ? Theme.of(context).colorScheme.primary
-                              : Colors.black),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    pageController.animateToPage(page: 2, duration: 400);
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          pageController.animateToPage(page: 1, duration: 400);
+                          page = 1;
+                        });
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          page == 1
+                              ? Icon(
+                                  Icons.psychology_alt_rounded,
+                                  color: Theme.of(context).colorScheme.primary,
+                                  size: 20,
+                                )
+                              : const Icon(
+                                  Icons.psychology_alt,
+                                  color: Colors.black,
+                                  size: 20,
+                                ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Projetos",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: page == 1
+                                    ? Theme.of(context).colorScheme.primary
+                                    : Colors.black),
+                          )
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          pageController.animateToPage(page: 2, duration: 400);
 
-                    page = 2;
-                  });
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    page == 2
-                        ? Icon(
-                            Icons.contact_emergency,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          )
-                        : const Icon(
-                            Icons.contact_emergency_outlined,
-                            color: Colors.black,
-                            size: 20,
+                          page = 2;
+                        });
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          page == 2
+                              ? Icon(
+                                  Icons.contact_emergency,
+                                  color: Theme.of(context).colorScheme.primary,
+                                  size: 20,
+                                )
+                              : const Icon(
+                                  Icons.contact_emergency_outlined,
+                                  color: Colors.black,
+                                  size: 20,
+                                ),
+                          const SizedBox(
+                            height: 5,
                           ),
-                    const SizedBox(
-                      height: 5,
+                          Text(
+                            "Contato",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: page == 2
+                                    ? Theme.of(context).colorScheme.primary
+                                    : Colors.black),
+                          )
+                        ],
+                      ),
                     ),
-                    Text(
-                      "Contato",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: page == 2
-                              ? Theme.of(context).colorScheme.primary
-                              : Colors.black),
-                    )
-                  ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    pageController.animateToPage(page: 3, duration: 400);
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          pageController.animateToPage(page: 3, duration: 400);
 
-                    page = 3;
-                  });
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    page == 3
-                        ? Icon(
-                            Icons.person,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 20,
-                          )
-                        : const Icon(
-                            Icons.person_2_outlined,
-                            color: Colors.black,
-                            size: 20,
+                          page = 3;
+                        });
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          page == 3
+                              ? Icon(
+                                  Icons.person,
+                                  color: Theme.of(context).colorScheme.primary,
+                                  size: 20,
+                                )
+                              : const Icon(
+                                  Icons.person_2_outlined,
+                                  color: Colors.black,
+                                  size: 20,
+                                ),
+                          const SizedBox(
+                            height: 5,
                           ),
-                    const SizedBox(
-                      height: 5,
+                          Text(
+                            "Sobre mim",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: page == 3
+                                    ? Theme.of(context).colorScheme.primary
+                                    : Colors.black),
+                          )
+                        ],
+                      ),
                     ),
-                    Text(
-                      "Sobre mim",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: page == 3
-                              ? Theme.of(context).colorScheme.primary
-                              : Colors.black),
-                    )
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
       ),
     );
   }
