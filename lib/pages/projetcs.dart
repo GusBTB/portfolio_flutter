@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:portfolio/components/project.dart';
 import 'package:portfolio/utils/utils.dart' as utils;
 import 'package:flutter_svg/flutter_svg.dart';

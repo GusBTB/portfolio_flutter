@@ -24,7 +24,6 @@ class _LandingPageState extends State<LandingPage>
   late double _circleRadiusBL;
   late double _circleRadiusBR;
   late double _circleHeight;
-  double _initialHW = 150;
   double xPosition = 0;
   late Animation<double> _opacityAnimation;
   @override

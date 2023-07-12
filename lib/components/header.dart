@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:gradient_borders/gradient_borders.dart';
 import 'package:portfolio/components/gradient_painter.dart';
 
 class Header extends StatefulWidget {
