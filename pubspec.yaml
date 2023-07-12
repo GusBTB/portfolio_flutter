@@ -46,6 +46,8 @@ dependencies:
   smooth_page_indicator:
   fluttertoast:
   flutter_staggered_animations:
+  gradient_borders:
+  flutter_rating_bar:
 
 dev_dependencies:
   flutter_test:
@@ -76,15 +78,18 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/eufoto.jpg
-    - assets/dashboard_nowaste_desktop.png
-    - assets/gs_banco_de_dados.png
-    - assets/gs_banco_de_dados1.png
-    - assets/gs_doc_json.png
-    - assets/gs_doc_rotas.png
-    - assets/mto_doc_init.png
-    - assets/myo_doc_json.png
-    - assets/nowaste_login_desktop.png
-    - assets/nowste_mobile_cart.png
+    - assets/carrinho_nowaste.png
+    - assets/contributors_nowaste.png
+    - assets/dashboard_nowaste.png
+    - assets/database.png
+    - assets/gs_doc_code.png
+    - assets/gs_doc_home.png
+    - assets/myo_code.png
+    - assets/myo_home.png
+    - assets/nowaste_desktop_login.png
+    - assets/portfolio_home.png
+    - assets/portfolio_project.png
+    - assets/potfolio_contatos.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

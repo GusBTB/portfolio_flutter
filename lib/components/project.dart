@@ -13,9 +13,11 @@ class Project extends StatefulWidget {
       required this.text,
       required this.provider,
       required this.description,
+      required this.desktopDescription,
       required this.btnsList});
   ProjectsProvider provider;
   String description;
+  String desktopDescription;
   List<Map<String, dynamic>> btnsList;
   String text;
   List<dynamic> list;
@@ -63,7 +65,6 @@ class _ProjectState extends State<Project> {
   }
 
   Widget unselectedProject(context) {
-    // debugPrint("AQUI SIZE " + ut.recoverSize(context).toString());
     return Container(
       width: ut.recoverSize(context),
       decoration: BoxDecoration(
@@ -101,18 +102,21 @@ class _ProjectState extends State<Project> {
                   ),
                 ),
                 const Expanded(child: SizedBox()),
-                GestureDetector(
-                  onTap: () {
-                    // getProvider();
-                    setState(() {
-                      getProvider(context);
-                    });
-                  },
-                  child: FaIcon(
-                    color: Colors.white,
-                    isOpen()
-                        ? FontAwesomeIcons.chevronUp
-                        : FontAwesomeIcons.chevronDown,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      // getProvider();
+                      setState(() {
+                        getProvider(context);
+                      });
+                    },
+                    child: FaIcon(
+                      color: Colors.white,
+                      isOpen()
+                          ? FontAwesomeIcons.chevronUp
+                          : FontAwesomeIcons.chevronDown,
+                    ),
                   ),
                 )
               ],
@@ -202,7 +206,13 @@ class _ProjectState extends State<Project> {
             child: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                child: Text(widget.description)),
+                child: Text(
+                  widget.description,
+                  softWrap: true,
+                  style: GoogleFonts.karla(
+                    fontSize: 16,
+                  ),
+                )),
           ),
           Container(
             decoration: const BoxDecoration(
@@ -212,8 +222,71 @@ class _ProjectState extends State<Project> {
                     bottomRight: Radius.circular(15))),
             width: ut.recoverSize(context),
             child: slider.Slider(
-              project: currentProject(),
+              provider: widget.provider,
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget desktopSelectedProject(context) {
+    return Container(
+      width: ut.recoverSize(context),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.5),
+            spreadRadius: 3,
+            blurRadius: 7,
+            offset: const Offset(0, 3),
+          )
+        ],
+      ),
+      child: Column(
+        children: [
+          unselectedProject(context),
+          Container(
+            height: 309,
+            width: ut.recoverSize(context),
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(15),
+                  bottomLeft: Radius.circular(15),
+                )),
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.description,
+                      style: GoogleFonts.karla(
+                          fontSize: 17, fontWeight: FontWeight.w400),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "contribuidores",
+                          style: GoogleFonts.koulen(
+                            fontSize: 22,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
+                        Text(
+                          widget.desktopDescription,
+                          style: GoogleFonts.karla(
+                              fontSize: 17, fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ],
+                )),
           ),
         ],
       ),
@@ -222,6 +295,13 @@ class _ProjectState extends State<Project> {
 
   @override
   Widget build(BuildContext context) {
-    return isOpen() ? selectedProject(context) : unselectedProject(context);
+    Size size = MediaQuery.of(context).size;
+    return size.width < 900
+        ? isOpen()
+            ? selectedProject(context)
+            : unselectedProject(context)
+        : isOpen()
+            ? desktopSelectedProject(context)
+            : unselectedProject(context);
   }
 }
