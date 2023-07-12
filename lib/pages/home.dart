@@ -28,7 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
           height: size.height,
           child: Column(
             children: [
-              const Header(),
+              Header(
+                page: page,
+                pageController: pageController,
+              ),
               Expanded(
                 child: LiquidSwipe(
                     liquidController: pageController,

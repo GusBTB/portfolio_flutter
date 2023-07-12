@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/utils/utils.dart' as utils;
 
 class ContactCards extends StatefulWidget {
   const ContactCards({super.key});
@@ -13,6 +14,7 @@ class ContactCards extends StatefulWidget {
 class _ContactCardsState extends State<ContactCards> {
   @override
   Widget build(BuildContext context) {
+    var ut = utils.Utils();
     Size size = MediaQuery.of(context).size;
     return Column(
       children: [
@@ -30,6 +32,7 @@ class _ContactCardsState extends State<ContactCards> {
                 ),
               ]),
           height: 90,
+          width: ut.recoverSize(context),
           child: Row(
             children: [
               Container(
@@ -72,7 +75,7 @@ class _ContactCardsState extends State<ContactCards> {
                             ? size.width < 351
                                 ? size.width < 323
                                     ? 9
-                                    : 10.5
+                                    : 10
                                 : 12
                             : 15,
                         fontWeight: FontWeight.w400,
@@ -122,6 +125,7 @@ class _ContactCardsState extends State<ContactCards> {
                 ),
               ]),
           height: 90,
+          width: ut.recoverSize(context),
           child: Row(
             children: [
               Container(
@@ -207,6 +211,7 @@ class _ContactCardsState extends State<ContactCards> {
                 ),
               ]),
           height: 90,
+          width: ut.recoverSize(context),
           child: Row(
             children: [
               Container(
