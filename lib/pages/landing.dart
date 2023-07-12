@@ -391,7 +391,7 @@ class _LandingPageState extends State<LandingPage>
             color: Colors.white,
             width: size.width,
             padding: EdgeInsets.only(
-                top: 15,
+                top: size.height * 0.05,
                 left: (size.width - ut.recoverSize(context)) / 2,
                 right: (size.width - ut.recoverSize(context)) / 2),
             child: mobileLanding(),

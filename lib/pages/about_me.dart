@@ -13,7 +13,7 @@ class AboutMe extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(
-          vertical: size.width < 900 ? 8 : size.height * 0.1,
+          vertical: size.width < 900 ? size.height * 0.05 : size.height * 0.1,
           horizontal: size.width < 900
               ? (size.width - ut.recoverSize(context)) / 2
               : 0),
